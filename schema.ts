@@ -17,8 +17,9 @@ export const voteData = sqliteTable("vote_data", {
     .default(sql`(unixepoch())`),
 });
 
-// usernames and their auth tokens
+// usernames and their id
+// this is really messed up legacy dev code that never reached prod
 export const users = sqliteTable("users", {
-  userId: text().primaryKey(),
-  token: text().unique(),
+  userName: text().primaryKey(),
+  userId: text().unique(),
 });
